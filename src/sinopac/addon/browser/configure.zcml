@@ -1,0 +1,103 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="sinopac.addon">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="sinopac.addon.interfaces.ISinopacAddonLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="sinopac.addon"
+      directory="static"
+      />
+
+
+  <!-- browserview -->
+
+  <browser:page
+      name="index"
+      for="*"
+      class=".views.Index"
+      template="template/index.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="leaving"
+      for="*"
+      class=".views.Leaving"
+      template="template/leaving.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="measures"
+      for="*"
+      class=".views.Measures"
+      template="template/measures.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="questions-confirm"
+      for="*"
+      class=".views.QuestionsConfirm"
+      template="template/questions-confirm.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="questions-correct"
+      for="*"
+      class=".views.QuestionsCorrect"
+      template="template/questions-correct.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="questions-start"
+      for="*"
+      class=".views.QuestionsStart"
+      template="template/questions-start.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="questions-wrong"
+      for="*"
+      class=".views.QuestionsWrong"
+      template="template/questions-wrong.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="result"
+      for="*"
+      class=".views.Result"
+      template="template/result.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="terms-and-agreements"
+      for="*"
+      class=".views.TermsAndAgreements"
+      template="template/terms-and-agreements.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="sinopac-macro"
+      for="*"
+      class=".views.SinopacMacro"
+      template="template/sinopac-macro.pt"
+      permission="zope2.View"
+      />
+
+</configure>

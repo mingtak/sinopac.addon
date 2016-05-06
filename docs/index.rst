@@ -1,0 +1,5 @@
+====================
+sinopac.addon
+====================
+
+User documentation
