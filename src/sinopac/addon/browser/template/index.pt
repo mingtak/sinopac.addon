@@ -13,18 +13,7 @@
           <metal:macro use-macro="context/@@sinopac-macro/macros/header" />
         </header>
         <nav class="header-nav hidden-max">
-          <div class="container">
-            <ul>
-              <li><a href="#">星座榮譽榜</a></li>
-              <li><a target="_blank" href="https://www.facebook.com/media/set/?set=a.1289515027730941.1073741835.155069867842135&type=3">FB星座故事篇</a></li>
-              <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide.html">MMA網銀服務</a></li>
-            </ul>
-            <ul>
-              <li><a target="_blank" href="https://m.sinopac.com/MMA8/mobile/official/index.html">行動銀行體驗</a></li>
-              <li><a target="_blank" href="https://youtu.be/0k1hGlwU-Rs">星座影片</a></li>
-              <li><a href="#">活動辦法</a></li>
-            </ul>
-          </div>
+          <metal:macro use-macro="context/@@sinopac-macro/macros/mobile" />
         </nav>
         <div class="outer_container">
           <div class="container index">

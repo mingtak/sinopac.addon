@@ -13,18 +13,7 @@
           <metal:macro use-macro="context/@@sinopac-macro/macros/header" />
         </header>
         <nav class="header-nav hidden-max">
-          <div class="container">
-            <ul>
-              <li><a href="#">星座榮譽榜</a></li>
-              <li><a target="_blank" href="https://www.facebook.com/media/set/?set=a.1289515027730941.1073741835.155069867842135&type=3">FB星座故事篇</a></li>
-              <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide.html">MMA網銀服務</a></li>
-            </ul>
-            <ul>
-              <li><a target="_blank" href="https://m.sinopac.com/MMA8/mobile/official/index.html">行動銀行體驗</a></li>
-              <li><a target="_blank" href="https://youtu.be/0k1hGlwU-Rs">星座影片</a></li>
-              <li><a href="#">活動辦法</a></li>
-            </ul>
-          </div>
+          <metal:macro use-macro="context/@@sinopac-macro/macros/mobile" />
         </nav>
         <div class="outer_container">
           <div class="container">
@@ -33,17 +22,16 @@
                 <div class="st">
                   <div class="act-title"></div>
                   <h2 class="l2 hidden-min">榮譽榜積分獎</h2>
-                  <h3>第 <span>01</span> 題</h3>
+                  <h3>第 <span tal:content="view/num">01</span> 題</h3>
                   <div class="qa-block">
                     <div class="ques">
-                      <div class="words"><p class="word">永豐銀行推出成家專案(房貸)，哪一項不是它的亮點？</p></div>
+                      <div class="words"><p class="word" tal:content="python:view.qBrain[0].Title">永豐銀行推出成家專案(房貸)，哪一項不是它的亮點？</p></div>
                     </div>
                     <div class="anss">
-                      <ul>
-                        <li><a href="#">A. 首購優惠利率</a></li>
-                        <li><a class="correct" href="#">B. 利息史上最高</a></li>
-                        <li><a href="#">C. 月付降到60%</a></li>
-                        <li><a href="#">D. 期限最長40年</a></li>
+                      <ul tal:define="qObj python:view.qBrain[0].getObject()">
+                        <li tal:repeat="ans python:[qObj.answer_1, qObj.answer_2, qObj.answer_3, qObj.answer_4]">
+                          <a href="#" tal:content="string:${repeat/ans/number}. ${ans}">1. 首購優惠利率</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
