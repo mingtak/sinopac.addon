@@ -45,6 +45,13 @@
       />
 
   <browser:page
+      name="questions"
+      for="*"
+      class=".views.Questions"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="questions-confirm"
       for="*"
       class=".views.QuestionsConfirm"
