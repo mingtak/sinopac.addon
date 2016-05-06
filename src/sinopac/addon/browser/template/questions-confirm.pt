@@ -1,53 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="zh-TW">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
-    <meta http-equiv="Cache-Control" content="no-cache" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <meta property="og:title" content="MMA星座理財-12星座理財榮譽榜" />
-    <meta property="og:image" content="https://mma.sinopac.com/MMA8/mma/html/event/electronic/signwm/images/fb.jpg"/>
-    <meta property="og:url" content="https://mma.sinopac.com/MMA8/mma/html/event/electronic/signwm/index.html" />
-    <meta property="og:description" content="輕鬆掌握2016星座運勢，完成任務就有機會獲得Sony Ps4" />
-    <meta name="keywords" content="永豐銀行,MMA,星座理財,機智問答,榮譽榜,網路銀行,行動銀行,星座故事"/>
-    <meta name="description" content="輕鬆掌握2016星座運勢，完成任務就有機會獲得Sony Ps4" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>［MMA星座理財］12星座理財榮譽榜 - 永豐銀行</title>
-    <link rel="shortcut icon" href="https://mma.sinopac.com/images/favicon.ico" />
-    <link href="++resource++sinopac.addon/css/reset.css" rel="stylesheet" type="text/css">
-    <link href="++resource++sinopac.addon/css/jquery-ui.css" rel="stylesheet" type="text/css">
-    <link href="++resource++sinopac.addon/css/site-light.css" rel="stylesheet" type="text/css">
-    <link href="++resource++sinopac.addon/css/tinyscrollbar.css" rel="stylesheet" type="text/css">
-    <script src="++resource++sinopac.addon/js/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="++resource++sinopac.addon/js/jquery-ui.js" type="text/javascript"></script>
-    <script src="++resource++sinopac.addon/js/jquery.lightbox_me.js" type="text/javascript"></script>
-    <script src="++resource++sinopac.addon/js/jquery.tinyscrollbar.min.js" type="text/javascript"></script>
-    <!--[if lt IE 9]>
-    <script src="++resource++sinopac.addon/js/html5shiv.min.js" type="text/javascript"></script>
-    <script src="++resource++sinopac.addon/js/respond.min.js" type="text/javascript"></script>
-    <![endif]-->
-    <script src="++resource++sinopac.addon/js/site-light.js" type="text/javascript"></script>
+    <metal:macro use-macro="context/@@sinopac-macro/macros/head-tag" />
   </head>
   <body>
+
     <div class="big-container">
       <div class="wrapper">
         <div class="wrapper_1"></div>
 
         <header>
-          <div class="header-top">
-            <div class="container">
-              <div class="left-pane">
-                <div class="logo">
-                  <a href="#" title="永豐銀行首頁">
-                    <img class="hidden-min" src="++resource++sinopac.addon/images/sinopac_logo.jpg" alt="永豐銀行"/>
-                    <img class="hidden-max" src="++resource++sinopac.addon/images/sinopac_logo_320.jpg" alt="永豐銀行">
-                  </a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
+          <metal:macro use-macro="context/@@sinopac-macro/macros/header" />
         </header>
         <nav class="header-nav hidden-max">
           <div class="container">
@@ -113,20 +76,7 @@
           </div>
         </div>
         <footer class="footer">
-          <nav class="footer-nav hidden-min">
-            <div class="container">
-              <ul>
-                <li><a href="#">星座榮譽榜</a></li>
-                <li><a target="_blank" href="https://www.facebook.com/media/set/?set=a.1289515027730941.1073741835.155069867842135&type=3">FB星座故事篇</a></li>
-                <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide.html">MMA網銀服務</a></li>
-                <li><a target="_blank" href="https://m.sinopac.com/MMA8/mobile/official/index.html">行動銀行體驗</a></li>
-                <li><a target="_blank" href="https://youtu.be/0k1hGlwU-Rs">星座影片</a></li>
-                <li><a href="#">活動辦法</a></li>
-              </ul>
-            </div>
-          </nav>
-          <div class="copyright hidden-min"><p>©版權所有永豐銀行   建議瀏覽器IE8.0以上/解析度1024*768           <a target="_blank" href="https://bank.sinopac.com/MMA8/bank/service/service-index.html">客服中心</a></p></div>        
-          <div class="copyright hidden-max"><p>© 版權所有永豐銀行</p></div>
+          <metal:macro use-macro="context/@@sinopac-macro/macros/footer" />
         </footer>    
       </div>
     </div>
