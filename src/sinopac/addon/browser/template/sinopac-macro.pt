@@ -8,6 +8,59 @@
 <body>
 
 
+  <metal:row define-macro="nd-correct">
+                  <div class="correct-block">
+                    <div class="yn-block">
+                      <div class="y">
+                        <div class="corr-ans"></div>
+                        <p>答對了</p>
+                      </div>
+                    </div>
+                    <div class="next">
+                      <div class="next-btn">
+                        <a href="#">下一題</a>
+                      </div>
+                    </div>
+                  </div>
+  </metal:row>
+
+  <metal:row define-macro="nd-wrong">
+                  <div class="correct-block">
+                    <div class="yn-block">
+                      <div class="n">
+                        <div class="wron-ans"></div>
+                        <p>答錯了</p>
+                        <div class="anan-wrong hidden-min">
+                          <img src="++resource++sinopac.addon/images/anan-wrong.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="next">
+                      <div class="next-btn">
+                        <a href="#">下一題</a>
+                      </div>
+                    </div>
+                    <div class="anan-wrong hidden-max">
+                      <img src="++resource++sinopac.addon/images/anan-wrong.png" alt="">
+                    </div>
+                  </div>
+  </metal:row>
+
+  <metal:row define-macro="mobile">
+          <div class="container">
+            <ul>
+              <li><a href="/@@result">星座榮譽榜</a></li>
+              <li><a target="_blank" href="https://www.facebook.com/media/set/?set=a.1289515027730941.1073741835.155069867842135&type=3">FB星座故事篇$
+              <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide.html">MMA網銀服務</a></li>
+            </ul>
+            <ul>
+              <li><a target="_blank" href="https://m.sinopac.com/MMA8/mobile/official/index.html">行動銀行體驗</a></li>
+              <li><a target="_blank" href="https://youtu.be/0k1hGlwU-Rs">星座影片</a></li>
+              <li><a href="/@@measures">活動辦法</a></li>
+            </ul>
+          </div>
+  </metal:row>
+
   <metal:row define-macro="footer">
           <nav class="footer-nav hidden-min">
             <div class="container">

@@ -29,20 +29,27 @@
         <div class="outer_container">
           <div class="container">
             <div class="act-block">
-              <div class="content fake-bg">
-                <div class="act-title"></div>
-                <h2 class="l2 hidden-min">榮譽榜積分獎</h2>
-                <div class="start-desc">
-                  <div class="soap">
-                    <p>進行機智問答遊戲，每人隨機5題，<span class="red fwb">答對一題100分</span>，滿分500分。根據參賽者星座進行積分累計，從積分最高前2名星座中，各抽出1名獲得Sony PS4，共2名（每人限1次抽獎機會）。</p>
+              <div class="content">
+                <div class="st">
+                  <div class="act-title"></div>
+                  <h2 class="l2 hidden-min">榮譽榜積分獎</h2>
+                  <h3>第 <span>01</span> 題</h3>
+                  <div class="qa-block">
+                    <div class="ques">
+                      <div class="words"><p class="word">永豐銀行推出成家專案(房貸)，哪一項不是它的亮點？</p></div>
+                    </div>
+                    <div class="anss">
+                      <ul>
+                        <li><a href="#">A. 首購優惠利率</a></li>
+                        <li><a class="correct" href="#">B. 利息史上最高</a></li>
+                        <li><a href="#">C. 月付降到60%</a></li>
+                        <li><a href="#">D. 期限最長40年</a></li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="anan-says">
-                    <img class="hidden-min" src="++resource++sinopac.addon/images/anan-says.png" alt="">
-                    <img class="hidden-max" src="++resource++sinopac.addon/images/anan-says-min.png" alt="">
-                  </div>
-                  <div class="submit-btn">
-                    <a href="/@@questions">開始作答</a>
-                  </div>
+                </div>
+                <div class="nd">
+<!-- 暫無 -->
                 </div>
               </div>
             </div>
