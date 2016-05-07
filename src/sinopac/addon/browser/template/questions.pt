@@ -30,24 +30,81 @@
                     <div class="anss">
                       <ul tal:define="qObj python:view.qBrain[0].getObject()">
                         <li tal:repeat="ans python:[qObj.answer_1, qObj.answer_2, qObj.answer_3, qObj.answer_4]">
-                          <a href="#" tal:content="string:${repeat/ans/number}. ${ans}">1. 首購優惠利率</a>
+                          <a tal:attributes="class string:answer answer_${repeat/ans/number}"
+                             tal:content="string:${repeat/ans/number}. ${ans}" href="#nd">1. 首購優惠利率</a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div class="nd">
+                <div class="nd" id="nd">
 <!-- 暫無 -->
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <script>
+          $(document).ready(function(){
+            $('.lboxed').hide();
+          });
+        </script>
+        <div class="lboxed">
+          <div class="close"><div class="block"></div></div>
+          <div class="lbox-content">
+            <div class="finish-the-ques">
+              <p>本題已完成，請進行下一題</p>
+              <div class="finish-anan">
+                <img class="hidden-min" src="++resource++sinopac.addon/images/finish-anan.png" alt="">
+                <img class="hidden-max" src="++resource++sinopac.addon/images/finish-anan-min.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <footer class="footer">
           <metal:macro use-macro="context/@@sinopac-macro/macros/footer" />
         </footer>    
       </div>
     </div>
+
+<script type="text/javascript" tal:repeat="ans python:range(4)">
+$(document).ready(function(){
+  $(".answer_<tal:ans replace="repeat/ans/number" />").click(function(){
+    $('div.nd').load('/@@check-answer?ans=<tal:ans replace="repeat/ans/number" />&ra=<tal:right_answer replace="view/answer"/>');
+
+    <tal:right condition="python:repeat['ans'].number == view.answer">
+    $('.answer_<span tal:replace="view/answer" />').attr("class", "correct");
+    $('a.answer').attr("class", "finish");
+    </tal:right>
+
+    <tal:wrong condition="python:repeat['ans'].number != view.answer">
+    $('.answer_<span tal:replace="view/answer" />').attr("class", "finish is-correct")
+    $('.answer_<span tal:replace="repeat/ans/number" />').attr("class", "wrong")
+    $('a.answer').attr("class", "finish");
+    </tal:wrong>
+
+    $('div.nd').attr("class", "nnd");
+  });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).on('click', 'a.finish', function(event){
+    $('.lboxed').lightbox_me({
+      centered: true
+    });
+  });
+</script>
+
+<script type="text/javascript">
+$('a.answer').click(function(){
+  $("html, body").animate({scrollTop:$('#nd').offset().top}, 800);
+});
+</script>
+
   </body>
 </html>
    

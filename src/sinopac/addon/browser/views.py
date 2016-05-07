@@ -7,18 +7,6 @@ from DateTime import DateTime
 import transaction
 
 
-class Index(BrowserView):
-    """ Index View
-    """
-
-class Leaving(BrowserView):
-    """ Leaving View
-    """
-
-class Measures(BrowserView):
-    """ Measures View
-    """
-
 class Questions(BrowserView):
     """ Questions View
     """
@@ -60,11 +48,42 @@ class Questions(BrowserView):
                 return
 
         self.qBrain = catalog(UID=question.split(':')[0])
+        self.answer = self.qBrain[0].getObject().rightAns
         return self.index()
 
 
-#self.request.response.setCookie('itemInCart', itemInCart)
-#self.request.cookies.get("cookie_name", "default_value_if_cookie_not_set")
+class CheckAnswer(BrowserView):
+    """ Check Answer
+    """
+
+    index = ViewPageTemplateFile('template/check_answer.pt')
+
+    def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        cookies = request.cookies
+#        catalog = context.portal_catalog
+
+        ans = request.get('ans', 1)
+        ra = request.get('ra', 0)
+        if ans == ra:
+            self.result = True
+        else:
+            self.result = False
+
+        qStr = cookies.get("qStr")
+        self.num = 0
+        new_qStr = ''
+        for q in qStr.split():
+            if q.split(':')[1] == 'N':
+                new_qStr += '%s:%s ' % (q.split(':')[0], 'R' if self.result else 'W')
+            else:
+                new_qStr += '%s ' % q
+
+        response.setCookie('qStr', new_qStr)
+        return self.index()
+
 
 class QuestionsConfirm(BrowserView):
     """ Questions-confirm View
@@ -93,3 +112,16 @@ class TermsAndAgreements(BrowserView):
 class SinopacMacro(BrowserView):
     """ Sinopac Macro View
     """
+
+class Index(BrowserView):
+    """ Index View
+    """
+
+class Leaving(BrowserView):
+    """ Leaving View
+    """
+
+class Measures(BrowserView):
+    """ Measures View
+    """
+

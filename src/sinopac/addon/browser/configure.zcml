@@ -52,6 +52,13 @@
       />
 
   <browser:page
+      name="check-answer"
+      for="*"
+      class=".views.CheckAnswer"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="questions-confirm"
       for="*"
       class=".views.QuestionsConfirm"

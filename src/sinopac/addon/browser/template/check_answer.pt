@@ -1,0 +1,37 @@
+                  <div class="correct-block" tal:condition="view/result">
+                    <div class="yn-block">
+                      <div class="y">
+                        <div class="corr-ans"></div>
+                        <p>答對了</p>
+                      </div>
+                    </div>
+                    <div class="next">
+                      <div class="next-btn">
+                        <a href="/@@questions">下一題</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="correct-block" tal:condition="not:view/result">
+                    <div class="yn-block">
+                      <div class="n">
+                        <div class="wron-ans"></div>
+                        <p>答錯了</p>
+                        <div class="anan-wrong hidden-min">
+                          <img src="++resource++sinopac.addon/images/anan-wrong.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="next">
+                      <div class="next-btn">
+                        <a href="/@@questions">下一題</a>
+                      </div>
+                    </div>
+                    <div class="anan-wrong hidden-max">
+                      <img src="++resource++sinopac.addon/images/anan-wrong.png" alt="">
+                    </div>
+                  </div>
+

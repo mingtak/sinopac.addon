@@ -81,7 +81,28 @@ footer nav.footer-nav ul li:last-child a::before { border-right: 0; }
 .act-block .content.fake-bg { position: relative; padding: 25px 40px; }
 .act-block .content.fake-bg::after { content: ""; background: url(../images/fake-bg.png) repeat-x 0 center; opacity: 0.8; top: 0; left: 0; bottom: 0; right: 0; position: absolute; z-index: -1; }
 .act-block .content .st { background: rgba(255, 255, 255, 0.7); padding: 25px 40px; -moz-border-radius-topleft: 16px; -webkit-border-top-left-radius: 16px; border-top-left-radius: 16px; -moz-border-radius-topright: 16px; -webkit-border-top-right-radius: 16px; border-top-right-radius: 16px; }
-.act-block .content .nd { min-height: 120px; background: rgba(130, 120, 176, 0.9); padding: 25px 0; -moz-border-radius-bottomleft: 16px; -webkit-border-bottom-left-radius: 16px; border-bottom-left-radius: 16px; -moz-border-radius-bottomright: 16px; -webkit-border-bottom-right-radius: 16px; border-bottom-right-radius: 16px; }
+.act-block .content .nd {
+     min-height: 120px;
+     background: rgba(130, 120, 176, 0.9);
+     padding: 25px 0;
+     -moz-border-radius-bottomleft: 16px;
+     -webkit-border-bottom-left-radius: 16px;
+     border-bottom-left-radius: 16px;
+     -moz-border-radius-bottomright: 16px;
+     -webkit-border-bottom-right-radius: 16px;
+     border-bottom-right-radius: 16px;
+}
+.act-block .content .nnd {
+     min-height: 120px;
+     background: rgba(130, 120, 176, 0.9);
+     padding: 25px 0;
+     -moz-border-radius-bottomleft: 16px;
+     -webkit-border-bottom-left-radius: 16px;
+     border-bottom-left-radius: 16px;
+     -moz-border-radius-bottomright: 16px;
+     -webkit-border-bottom-right-radius: 16px;
+     border-bottom-right-radius: 16px;
+}
 .act-block .qa-block .ques { background: url(../images/cat.png) no-repeat left center; padding-left: 150px; padding-bottom: 22px; padding-top: 11px; margin-top: 3%; }
 .act-block .qa-block .ques .words { height: 91px; background: #fff; display: table; width: 100%; position: relative; }
 .act-block .qa-block .ques .words::before { position: absolute; left: -16px; top: 50%; margin-top: -9px; content: ""; display: block; width: 0; height: 0; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-right: 16px solid #fff; }
