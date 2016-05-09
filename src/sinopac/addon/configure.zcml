@@ -46,4 +46,8 @@
       factory=".setuphandlers.HiddenProfiles"
       name="sinopac.addon-hiddenprofiles" />
 
+
+  <!-- Adapter for catalog -->
+  <adapter name="players" factory=".catalog.players_indexer" />
+
 </configure>

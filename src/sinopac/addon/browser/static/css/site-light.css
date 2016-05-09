@@ -200,7 +200,32 @@ ol.decimal li { margin-left: 20px; }
 p.oll2 { text-indent: -4%; margin-left: 4%; }
 
 .submit-btn { position: relative; z-index: 1; display: block; width: 40%; margin: 5% auto 0; }
-.submit-btn a { display: block; font-size: 1.5em; background: #70f9ee; text-align: center; line-height: 3; -moz-border-radius: 25px; -webkit-border-radius: 25px; border-radius: 25px; }
+
+.submit-btn a {
+    display: block;
+    font-size: 1.5em;
+    background: #70f9ee;
+    text-align: center;
+    line-height: 3;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+}
+
+.submit-btn input.submit {
+    display: block;
+    font-size: 1.5em;
+    width:100%;
+    background: #70f9ee;
+    text-align: center;
+    line-height: 3;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+}
+
+
+
 .submit-btn::before { content: ""; display: block; position: absolute; top: 12px; width: 100%; height: 100%; background: #4fd3c8; -moz-border-radius: 25px; -webkit-border-radius: 25px; border-radius: 25px; z-index: -1; }
 
 .finish-anan img { max-width: 100%; vertical-align: top; }

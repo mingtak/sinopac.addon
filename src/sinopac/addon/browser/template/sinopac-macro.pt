@@ -7,6 +7,28 @@
     i18n:domain="sinopac.addon">
 <body>
 
+  <metal:row define-macro="played">
+        <script>
+          $(document).ready(function(){
+            $('.lboxed').lightbox_me({
+              centered: true
+            });
+          });
+          setTimeout(function(){ window.location = '/'; }, 3000);
+        </script>
+        <div class="lboxed">
+          <div class="close"><div class="block"></div></div>
+          <div class="lbox-content">
+            <div class="finish-the-ques">
+              <p>您已參加過本活動，感謝您的熱情參與。</p>
+              <div class="finish-anan">
+                <img class="hidden-min" src="++resource++sinopac.addon/images/finish-anan.png" alt="">
+                <img class="hidden-max" src="++resource++sinopac.addon/images/finish-anan-min.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+  </metal:row>
 
   <metal:row define-macro="nd-correct">
                   <div class="correct-block">

@@ -29,6 +29,13 @@
       />
 
   <browser:page
+      name="computing"
+      for="*"
+      class=".views.Computing"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="leaving"
       for="*"
       class=".views.Leaving"

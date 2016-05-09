@@ -18,6 +18,7 @@
         <div class="outer_container">
           <div class="container">
             <div class="act-block">
+<form method="post" action="/@@computing">
               <div class="content fake-bg">
                 <div class="act-title"></div>
                 <h2 class="l2 hidden-min">榮譽榜積分獎</h2>
@@ -27,7 +28,7 @@
                       <div class="th">姓名：</div>
                       <div class="td">
                         <div class="out-box">
-                          <input type="text">
+                          <input type="text" name="name" id="name">
                         </div>
                       </div>
                     </li>
@@ -35,7 +36,7 @@
                       <div class="th">Email：</div>
                       <div class="td">
                         <div class="out-box">
-                          <input type="text">
+                          <input type="text" name="email" id="email">
                         </div>
                       </div>
                     </li>
@@ -43,36 +44,38 @@
                       <div class="th">星座：</div>
                       <div class="td">
                         <div class="out-box">
-                          <select name="" id="">
+                          <select name="const" id="const">
                             <option value="">請選擇</option>
-                            <option value="">牡羊座</option>
-                            <option value="">金牛座</option>
-                            <option value="">雙子座</option>
-                            <option value="">巨蟹座</option>
-                            <option value="">獅子座</option>
-                            <option value="">處女座</option>
-                            <option value="">天秤座</option>
-                            <option value="">天蠍座</option>
-                            <option value="">射手座</option>
-                            <option value="">魔羯座</option>
-                            <option value="">水瓶座</option>
-                            <option value="">雙魚座</option>
+                            <option value="const_1">牡羊座</option>
+                            <option value="const_2">金牛座</option>
+                            <option value="const_3">雙子座</option>
+                            <option value="const_4">巨蟹座</option>
+                            <option value="const_5">獅子座</option>
+                            <option value="const_6">處女座</option>
+                            <option value="const_7">天秤座</option>
+                            <option value="const_8">天蠍座</option>
+                            <option value="const_9">射手座</option>
+                            <option value="const_10">魔羯座</option>
+                            <option value="const_11">水瓶座</option>
+                            <option value="const_12">雙魚座</option>
                           </select>
                         </div>
                       </div>
                     </li>
                   </ul>
                   <div class="submit-btn">
-                    <a href="#">完成送出</a>
+<input type="submit" value="完成送出" class="submit">
                   </div>
                   <div class="anan-fly">
                     <img src="++resource++sinopac.addon/images/anan-fly.png" alt="">
                   </div>
                 </div>
               </div>
+</form>
             </div>
           </div>
         </div>
+
         <footer class="footer">
           <metal:macro use-macro="context/@@sinopac-macro/macros/footer" />
         </footer>    
