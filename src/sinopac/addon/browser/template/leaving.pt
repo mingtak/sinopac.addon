@@ -18,7 +18,7 @@
         <div class="outer_container">
           <div class="container">
             <div class="act-block">
-<form method="post" action="/@@computing">
+<form method="post" action="/@@computing" id="myform">
               <div class="content fake-bg">
                 <div class="act-title"></div>
                 <h2 class="l2 hidden-min">榮譽榜積分獎</h2>
@@ -28,7 +28,7 @@
                       <div class="th">姓名：</div>
                       <div class="td">
                         <div class="out-box">
-                          <input type="text" name="name" id="name">
+                          <input type="text" name="name" id="name" required>
                         </div>
                       </div>
                     </li>
@@ -36,7 +36,7 @@
                       <div class="th">Email：</div>
                       <div class="td">
                         <div class="out-box">
-                          <input type="text" name="email" id="email">
+                          <input type="email" name="email" id="email" required>
                         </div>
                       </div>
                     </li>
@@ -44,7 +44,7 @@
                       <div class="th">星座：</div>
                       <div class="td">
                         <div class="out-box">
-                          <select name="const" id="const">
+                          <select name="const" id="const" required>
                             <option value="">請選擇</option>
                             <option value="const_1">牡羊座</option>
                             <option value="const_2">金牛座</option>
@@ -81,6 +81,7 @@
         </footer>    
       </div>
     </div>
+
   </body>
 </html>
    

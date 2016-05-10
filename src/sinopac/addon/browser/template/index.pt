@@ -4,7 +4,6 @@
     <metal:macro use-macro="context/@@sinopac-macro/macros/head-tag" />
   </head>
   <body>
-
     <div class="big-container">
       <div class="wrapper">
         <div class="wrapper_1"></div>
@@ -46,7 +45,7 @@
                   <span class="txt2 hidden-min">抽 全家50元商品兌換券</span>
                 </div>
                 <div class="btn">
-                  <a href="#">立即挑戰</a>
+                  <a href="#" class="share-btn">立即分享</a>
                 </div>
               </div>
               <div class="box3">
@@ -86,6 +85,81 @@
           }
         });
         </script>
+
+
+<!-- 分享/隱私權聲明 -->
+        <script>
+          $(document).ready(function(){
+            $('.share-agreement').hide();
+          });
+        </script>
+        <div class="lboxed full-height agreement-box share-agreement">
+          <div class="close"><div class="block"></div></div>
+          <div class="lbox-content">
+            <div class="terms-and-agreements">
+              <div class="tinyscrollbar">
+                <div class="scrollbar"><div class="track"><div class="thumb"></div></div></div>
+                <div class="viewport">
+                  <div class="overview">
+                    <p class="title">隱私權聲明</p>
+                    <p>我們對保護隱私權的承諾<br/>本行重視您的隱私權，為了使您更易於瞭解本行對您到訪本站提供個人資料時，所採取之使用及保護個人資料政策。遵守『個人資料保護法』以維護客戶資料的安全性、完整性及正確性及確保資料使用的合目的性，是永豐銀行對您的承諾。</p>
+                    <p class="title">我們如何使用您的資料</p>
+                    <p>本行對於您參加本活動於本行網站或個人臉書上留存或公開之個人資料，均會在主管機關允許之特定目的及本活動執行之範圍內蒐集、處理及利用，並符合『個人資料保護法』及相關法令之規定。如您不同意，即無法參加本活動。<br/>除法令規定或主管機關之命令，或依您與本行間有關本網站使用之相關約定或其他本行與您所簽訂之業務契約約定外，非經您同意或授權，本行不會向任何第三人揭露（共享、出售或洩露）您提供予本行的個人資料。<br/>若本行擬就您所提供的個人資料以及您於網站上公開或留存之資料作為本活動目的範圍外之利用，本行將於資料處理、利用或傳輸之前向您明確告知並於取得您同意後為之。<br/>您對於您的個人資料得隨時向本行請求查詢、閱覽、補充、更正、製給複本、請求停止蒐集、處理及利用。</p>
+                    <p class="title">資料安全防護之承諾</p>
+                    <p>為避免未經授權人士接觸到您的個人資料，本行已制訂一套安全防護控管原則，以確保您線上提供之個人資料之正確及合法使用。<br/>本行只准許受過客戶資訊處理訓練課程並經授權的職員方能接觸客戶之個人資料，違反本行隱私權保護規定之職員將受到處分。</p>
+                    <p class="title">與我們聯繫</p>
+                    <p>若您有任何問題或對本隱私權保護聲明有任何疑問時，請致電：<br/>永豐銀行電話服務中心：(02)2505-9999、0203-08989，或是透過<a class="red" href="https://bank.sinopac.com/MMA8/bank/service/service-index.html" target="_blank">線上客服</a>聯絡我們。</p>
+                    <br/><br/><br/>
+                  </div>
+                </div>
+              </div>
+              <div class="submit-btn close-btn">
+                <a tal:attributes="href string:https://www.facebook.com/dialog/share?app_id=163972337291190&display=popup&href=${context/absolute_url}&redirect_uri=${context/absolute_url}/@@facebookLogin">我同意</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(document).on('click', 'a.share-btn', function(event){
+            var $scrollbar = $(".tinyscrollbar");
+            $scrollbar.tinyscrollbar();
+            $('.share-agreement').lightbox_me({
+              closeSelector: '.close',
+              onLoad: function(){
+                $scrollbar.data('plugin_tinyscrollbar').update();
+              }
+            });
+          });
+        </script>
+<!-- 分享/隱私權聲明 end -->
+
+<!-- 分享/活動完成回應 -->
+<tal:agreement condition="python:view.request.get('fshare', '') == 't'">
+        <script>
+          $(document).ready(function(){
+            $('.finish-share-box').lightbox_me({
+              centered: true
+            });
+          });
+        </script>
+        <div class="lboxed finish-share-box">
+          <div class="close"><div class="block"></div></div>
+          <div class="lbox-content">
+            <div class="finish-the-ques">
+              <p>您已經完成分享，給你個讚！</p>
+              <div class="finish-anan">
+                <img class="hidden-min" src="++resource++sinopac.addon/images/finish-anan-min.png" alt="">
+                <img class="hidden-max" src="++resource++sinopac.addon/images/finish-anan-min.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+</tal:agreement>
+<!-- 分享/活動完成回應 end -->
+
+
+
+
         <footer class="footer">
           <metal:macro use-macro="context/@@sinopac-macro/macros/footer" />
         </footer>    

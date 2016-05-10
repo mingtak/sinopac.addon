@@ -7,7 +7,10 @@
                     </div>
                     <div class="next">
                       <div class="next-btn">
-                        <a href="/@@questions">下一題</a>
+                        <tal:num switch="python:view.request.get('num')">
+                          <a tal:case="python:'5'" href="/@@questions">下一步</a>
+                          <a tal:case="default" href="/@@questions">下一題</a>
+                        </tal:num>
                       </div>
                     </div>
                   </div>
@@ -27,7 +30,10 @@
                     </div>
                     <div class="next">
                       <div class="next-btn">
-                        <a href="/@@questions">下一題</a>
+                        <tal:num switch="python:view.request.get('num')">
+                          <a tal:case="python:'5'" href="/@@questions">下一步</a>
+                          <a tal:case="default" href="/@@questions">下一題</a>
+                        </tal:num>
                       </div>
                     </div>
                     <div class="anan-wrong hidden-max">

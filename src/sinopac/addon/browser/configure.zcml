@@ -21,6 +21,14 @@
   <!-- browserview -->
 
   <browser:page
+      name="player_view"
+      for="sinopac.addon.interfaces.IPlayer"
+      class=".views.PlayerView"
+      template="template/player_view.pt"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
       name="index"
       for="*"
       class=".views.Index"
@@ -101,7 +109,6 @@
       name="result"
       for="*"
       class=".views.Result"
-      template="template/result.pt"
       permission="zope2.View"
       />
 

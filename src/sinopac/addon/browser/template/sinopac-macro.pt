@@ -146,6 +146,7 @@
     <script src="++resource++sinopac.addon/js/respond.min.js" type="text/javascript"></script>
     <![endif]-->
     <script src="++resource++sinopac.addon/js/site-light.js" type="text/javascript"></script>
+
   </metal:row>
 
 </body>

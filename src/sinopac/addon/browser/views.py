@@ -6,13 +6,13 @@ from plone import api
 import random
 from DateTime import DateTime
 import transaction
+from zope.lifecycleevent import ObjectModifiedEvent
+from zope.event import notify
 
 
 class Computing(BrowserView):
-    """ Compugint view
+    """ Computing
     """
-
-    index = ViewPageTemplateFile('template/computing.pt')
 
     def __call__(self):
         context = self.context
@@ -33,53 +33,53 @@ class Computing(BrowserView):
             response.redirect('/')
             return
 
-        scope = 0
+        self.scope = 0
         for q in qStr.split():
             if q.split(':')[1] == 'R':
-                scope += 100
+                self.scope += 100
 
         if const == 'const_1':
-            result.const_1 += scope
+            result.const_1 += self.scope
         elif const == 'const_2':
-            result.const_2 += scope
+            result.const_2 += self.scope
         elif const == 'const_3':
-            result.const_3 += scope
+            result.const_3 += self.scope
         elif const == 'const_4':
-            result.const_4 += scope
+            result.const_4 += self.scope
         elif const == 'const_5':
-            result.const_5 += scope
+            result.const_5 += self.scope
         elif const == 'const_6':
-            result.const_6 += scope
+            result.const_6 += self.scope
         elif const == 'const_7':
-            result.const_7 += scope
+            result.const_7 += self.scope
         elif const == 'const_8':
-            result.const_8 += scope
+            result.const_8 += self.scope
         elif const == 'const_9':
-            result.const_9 += scope
+            result.const_9 += self.scope
         elif const == 'const_10':
-            result.const_10 += scope
+            result.const_10 += self.scope
         elif const == 'const_11':
-            result.const_11 += scope
+            result.const_11 += self.scope
         elif const == 'const_12':
-            result.const_12 += scope
+            result.const_12 += self.scope
 
-        if catalog(players=email):
-            """ 顯示已參加過 """
-            response.redirect('/')
-            return self.index()
-        else:
-            """ 寫入，再顯示感謝您參加本遊戲 """
-            response.redirect('/@@result')
-            return self.index()
-        """ 1,計算應得分數(1個R 100分)，
-2,透過cookie找到星座
-3.把分數寫到星座(在qStr)
-4.透過cookie得到 姓名 email
-5.catalog email看有沒有玩過
-6.有完過回應有參加過了，回首頁
-7.沒玩過，把 姓名 email 寫到 portal['resource']['players'], 跳到星座榮譽榜
-"""
+        played = 'F'
 
+        for player in players.players:
+            if email == player.split()[1]:
+                """ 顯示已參加過 """
+                played = 'T'
+                break
+
+        if played == 'F':
+            with api.env.adopt_roles(['Manager']):
+                players.players.append('%s %s' % (name, email))
+#                players.reindexObject()
+                notify(ObjectModifiedEvent(players))
+                transaction.commit()
+
+        response.redirect('/@@result?played=%s&scope=%s' % (played, self.scope))
+        return
 
 
 class Questions(BrowserView):
@@ -181,6 +181,16 @@ class Result(BrowserView):
     """ Result View
     """
 
+    index = ViewPageTemplateFile('template/result.pt')
+
+    def __call__(self):
+
+        portal = api.portal.get()
+        self.result = portal['resource']['result']
+        return self.index()
+
+
+
 class TermsAndAgreements(BrowserView):
     """ Terms-and-agreements View
     """
@@ -201,3 +211,6 @@ class Measures(BrowserView):
     """ Measures View
     """
 
+class PlayerView(BrowserView):
+    """ PlayerView
+    """
