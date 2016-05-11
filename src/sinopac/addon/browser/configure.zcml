@@ -21,6 +21,27 @@
   <!-- browserview -->
 
   <browser:page
+      name="share_bingo"
+      for="*"
+      class=".views.ShareBingo"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
+      name="share_player"
+      for="*"
+      class=".views.SharePlayer"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
+      name="ps4-bingo"
+      for="*"
+      class=".views.Ps4Bingo"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
       name="player_view"
       for="sinopac.addon.interfaces.IPlayer"
       class=".views.PlayerView"
@@ -60,6 +81,14 @@
       />
 
   <browser:page
+      name="questions-start"
+      for="*"
+      class=".views.QuestionsStart"
+      template="template/questions-start.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="questions"
       for="*"
       class=".views.Questions"
@@ -74,49 +103,9 @@
       />
 
   <browser:page
-      name="questions-confirm"
-      for="*"
-      class=".views.QuestionsConfirm"
-      template="template/questions-confirm.pt"
-      permission="zope2.View"
-      />
-
-  <browser:page
-      name="questions-correct"
-      for="*"
-      class=".views.QuestionsCorrect"
-      template="template/questions-correct.pt"
-      permission="zope2.View"
-      />
-
-  <browser:page
-      name="questions-start"
-      for="*"
-      class=".views.QuestionsStart"
-      template="template/questions-start.pt"
-      permission="zope2.View"
-      />
-
-  <browser:page
-      name="questions-wrong"
-      for="*"
-      class=".views.QuestionsWrong"
-      template="template/questions-wrong.pt"
-      permission="zope2.View"
-      />
-
-  <browser:page
       name="result"
       for="*"
       class=".views.Result"
-      permission="zope2.View"
-      />
-
-  <browser:page
-      name="terms-and-agreements"
-      for="*"
-      class=".views.TermsAndAgreements"
-      template="template/terms-and-agreements.pt"
       permission="zope2.View"
       />
 
@@ -127,5 +116,14 @@
       template="template/sinopac-macro.pt"
       permission="zope2.View"
       />
+
+<!--
+  <browser:page
+      name="testttt"
+      for="*"
+      class=".views.Testttt"
+      permission="cmf.ManagePortal"
+      />
+-->
 
 </configure>

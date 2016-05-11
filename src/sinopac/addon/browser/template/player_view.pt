@@ -8,22 +8,47 @@
 
 <metal:content-core fill-slot="content-core">
 
-<ul tal:define="players context/players">
-<li tal:repeat="player players"
-    tal:content="player" />
-
-</ul>
-
+<h3><a href="#" class="go">點這裏下方會立即顯示中獎名單</a></h3>
+<h6>從最高積分的二個星座中，各抽出一個中獎名額</h6>
+<h4>中獎名單如下：</h4>
+<div class="ps4-bingo" />
 
 
+<hr/>
+<h3>星座代號對應表</h3>
+牡羊座 const_1<br/>
+金牛座 const_2<br/>
+雙子座 const_3<br/>
+巨蟹座 const_4<br/>
+獅子座 const_5<br/>
+處女座 const_6<br/>
+天秤座 const_7<br/>
+天蠍座 const_8<br/>
+射手座 const_9<br/>
+摩羯座 const_10<br/>
+水瓶座 const_11<br/>
+雙魚座 const_12<br/>
+
+<hr/>
+
+<h3>參加問答名單</h3>
+<div tal:define="players context/players">
+  <h4 tal:repeat="player players">
+   <strong style="color:blue">姓名: </strong><span tal:content="python:' '.join(player.split()[0:-2])" />,
+   <strong style="color:blue">Email: </strong><span tal:content="python:player.split()[-2]" />,
+   <strong style="color:blue">星座: </strong><span tal:content="python:player.split()[-1]" i18n:translate="" />
+  </h4>
+</div>
 
 
 
-
-
-
-
-
+<script type="text/javascript">
+$(document).ready(function(){
+  $("a.go").click(function(){
+    $('div.ps4-bingo').load('/@@ps4-bingo')
+  });
+});
+</script>
 
 
 

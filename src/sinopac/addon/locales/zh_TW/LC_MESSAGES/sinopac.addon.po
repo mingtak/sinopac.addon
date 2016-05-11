@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,15 +12,15 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: sinopac.addon\n"
+"Domain: DOMAIN\n"
 
 #: ./interfaces.py:116
 msgid "Answer"
-msgstr ""
+msgstr "答案選項"
 
 #: ./profiles/default/types/Const.xml
 msgid "Const"
-msgstr ""
+msgstr "星座"
 
 #: ./interfaces.py:17
 msgid "Constellation"
@@ -35,19 +32,19 @@ msgstr ""
 
 #: ./profiles/default/types/Player.xml
 msgid "Player"
-msgstr ""
+msgstr "參加者"
 
 #: ./interfaces.py:102
 msgid "Players"
-msgstr ""
+msgstr "參加者"
 
 #: ./profiles/default/types/Question.xml
 msgid "Question"
-msgstr ""
+msgstr "問題"
 
 #: ./interfaces.py:136
 msgid "Right Answer"
-msgstr ""
+msgstr "正確解答"
 
 #: ./interfaces.py:97
 msgid "Title"
@@ -63,51 +60,51 @@ msgstr ""
 
 #: ./interfaces.py:22
 msgid "const_1"
-msgstr ""
+msgstr "牡羊座"
 
 #: ./interfaces.py:76
 msgid "const_10"
-msgstr ""
+msgstr "摩羯座"
 
 #: ./interfaces.py:82
 msgid "const_11"
-msgstr ""
+msgstr "水瓶座"
 
 #: ./interfaces.py:88
 msgid "const_12"
-msgstr ""
+msgstr "雙魚座"
 
 #: ./interfaces.py:28
 msgid "const_2"
-msgstr ""
+msgstr "金牛座"
 
 #: ./interfaces.py:34
 msgid "const_3"
-msgstr ""
+msgstr "雙子座"
 
 #: ./interfaces.py:40
 msgid "const_4"
-msgstr ""
+msgstr "巨蟹座"
 
 #: ./interfaces.py:46
 msgid "const_5"
-msgstr ""
+msgstr "獅子座"
 
 #: ./interfaces.py:52
 msgid "const_6"
-msgstr ""
+msgstr "處女座"
 
 #: ./interfaces.py:58
 msgid "const_7"
-msgstr ""
+msgstr "天秤座"
 
 #: ./interfaces.py:64
 msgid "const_8"
-msgstr ""
+msgstr "天蠍座"
 
 #: ./interfaces.py:70
 msgid "const_9"
-msgstr ""
+msgstr "射手座"
 
 #: ./configure.zcml:21
 msgid "sinopac.addon"

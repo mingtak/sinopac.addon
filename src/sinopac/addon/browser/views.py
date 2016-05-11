@@ -10,6 +10,11 @@ from zope.lifecycleevent import ObjectModifiedEvent
 from zope.event import notify
 
 
+class Testttt(BrowserView):
+    def __call__(self):
+        import pdb; pdb.set_trace()
+
+
 class Computing(BrowserView):
     """ Computing
     """
@@ -73,8 +78,7 @@ class Computing(BrowserView):
 
         if played == 'F':
             with api.env.adopt_roles(['Manager']):
-                players.players.append('%s %s' % (name, email))
-#                players.reindexObject()
+                players.players.append('%s %s %s' % (name, email, const))
                 notify(ObjectModifiedEvent(players))
                 transaction.commit()
 
@@ -214,3 +218,82 @@ class Measures(BrowserView):
 class PlayerView(BrowserView):
     """ PlayerView
     """
+
+class Ps4Bingo(BrowserView):
+    """ Ps4 Bingo
+    """
+
+    index = ViewPageTemplateFile('template/ps4-bingo.pt')
+
+    def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        catalog = context.portal_catalog
+
+        portal = api.portal.get()
+        constResult = portal['resource']['result']
+        players = portal['resource']['players']
+
+
+        # 計算前二高星座
+        constList = {constResult.const_1:'const_1', constResult.const_2:'const_2', constResult.const_3:'const_3', constResult.const_4:'const_4',
+                     constResult.const_5:'const_5', constResult.const_6:'const_6', constResult.const_7:'const_7', constResult.const_8:'const_8',
+                     constResult.const_9:'const_9', constResult.const_10:'const_10', constResult.const_11:'const_11', constResult.const_12:'const_12'}
+
+        sortedScope = constList.keys()
+        sortedScope.sort()
+        sortedScope.reverse()
+        highestConst = [constList[sortedScope[0]], constList[sortedScope[1]]]
+
+        self.bingoer = []
+        candidate = []
+        for p in players.players:
+            if p.endswith(highestConst[0]):
+                candidate.append(p)
+        self.bingoer.append(random.choice(candidate))
+
+        candidate = []
+        for p in players.players:
+            if p.endswith(highestConst[1]):
+                candidate.append(p)
+        self.bingoer.append(random.choice(candidate))
+
+
+#        import pdb; pdb.set_trace()
+        return self.index()
+
+
+class SharePlayer(BrowserView):
+    """ Share Player
+    """
+    index = ViewPageTemplateFile('template/share_player.pt')
+
+    def __call__(self):
+        self.users = api.user.get_users()
+        return self.index()
+
+
+class ShareBingo(BrowserView):
+    """ Share Bingo
+    """
+    index = ViewPageTemplateFile('template/share_bingo.pt')
+
+    def __call__(self):
+        users = api.user.get_users()
+
+        self.bingoer = []
+        winners = 0
+        while True:
+            choice = random.choice(users)
+            if choice in self.bingoer:
+                continue
+            self.bingoer.append(choice)
+            winners += 1
+            # 樣本不足，先抽2個
+            if winners >= 2:
+                break
+
+#        import pdb; pdb.set_trace()
+        return self.index()
+

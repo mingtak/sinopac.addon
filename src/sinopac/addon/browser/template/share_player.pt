@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="sinopac.addon">
+<body>
+
+<metal:content-core fill-slot="content-core">
+
+<h2>FB分享獎</h2>
+<h3><a href="#" class="go">點這裏下方會立即顯示中獎名單</a></h3>
+<h5 style="color:red">從有參加分享活動的名單中抽100名中獎名額(目前測試名單不足，只先抽2個)</h5>
+<h4>中獎名單如下：</h4>
+<div class="share-bingo" />
+
+
+<hr/>
+<h3>參加分享名單</h3>
+<ul tal:define="users view/users">
+<li tal:repeat="user users">
+<p>
+ <strong style="color:blue">姓名: </strong><span tal:content="python:user.getProperty('fullname')"/>,
+ <strong style="color:blue">Email: </strong><span tal:content="python:user.getProperty('email')"/>,
+ <strong style="color:blue">FB連結: </strong><a tal:content="python:user.getUserName().split('fb')[1]"
+    tal:attributes="href python:'https://www.facebook.com/%s' % user.getUserName().split('fb')[1]"
+    tal:on-error="nothing" target="_blank" />
+</p>
+
+</li>
+</ul>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("a.go").click(function(){
+    $('div.share-bingo').load('/@@share_bingo')
+  });
+});
+
+</script>
+
+
+
+
+</metal:content-core>
+
+</body>
+</html>

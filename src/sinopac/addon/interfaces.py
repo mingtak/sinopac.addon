@@ -19,73 +19,73 @@ class IConst(Interface):
     )
 
     const_1 = schema.Int(
-        title=_(u"Const 1"),
+        title=_(u"const_1"),
         default=0,
         required=True,
     )
 
     const_2 = schema.Int(
-        title=_(u"Const 2"),
+        title=_(u"const_2"),
         default=0,
         required=True,
     )
 
     const_3 = schema.Int(
-        title=_(u"Const 3"),
+        title=_(u"const_3"),
         default=0,
         required=True,
     )
 
     const_4 = schema.Int(
-        title=_(u"Const 4"),
+        title=_(u"const_4"),
         default=0,
         required=True,
     )
 
     const_5 = schema.Int(
-        title=_(u"Const 5"),
+        title=_(u"const_5"),
         default=0,
         required=True,
     )
 
     const_6 = schema.Int(
-        title=_(u"Const 6"),
+        title=_(u"const_6"),
         default=0,
         required=True,
     )
 
     const_7 = schema.Int(
-        title=_(u"Const 7"),
+        title=_(u"const_7"),
         default=0,
-        required=True,
+       required=True,
     )
 
     const_8 = schema.Int(
-        title=_(u"Const 8"),
+        title=_(u"const_8"),
         default=0,
         required=True,
     )
 
     const_9 = schema.Int(
-        title=_(u"Const 9"),
+        title=_(u"const_9"),
         default=0,
         required=True,
     )
 
     const_10 = schema.Int(
-        title=_(u"Const 10"),
+        title=_(u"const_10"),
         default=0,
         required=True,
     )
 
     const_11 = schema.Int(
-        title=_(u"Const 11"),
+        title=_(u"const_11"),
         default=0,
         required=True,
     )
 
     const_12 = schema.Int(
-        title=_(u"Const 12"),
+        title=_(u"const_12"),
         default=0,
         required=True,
     )

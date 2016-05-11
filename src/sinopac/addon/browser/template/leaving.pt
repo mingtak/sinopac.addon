@@ -20,9 +20,7 @@
             <div class="act-block">
 <form method="post" action="/@@computing" id="myform">
               <div class="content fake-bg">
-                  <a href="/">                  
-                    <div class="act-title"></div>
-                  </a>
+                <div class="act-title"></div>
                 <h2 class="l2 hidden-min">榮譽榜積分獎</h2>
                 <div class="form-block">
                   <ul class="ftable">

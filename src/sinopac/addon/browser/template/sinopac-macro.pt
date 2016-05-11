@@ -71,9 +71,10 @@
   <metal:row define-macro="mobile">
           <div class="container">
             <ul>
+              <li><a href="/">回首頁</li>
               <li><a href="/@@result">星座榮譽榜</a></li>
               <li><a target="_blank" href="https://www.facebook.com/media/set/?set=a.1289515027730941.1073741835.155069867842135&type=3">FB星座故事篇</a></li>
-              <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide.html">MMA網銀服務</a></li>
+              <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide01.html">MMA網銀服務</a></li>
             </ul>
             <ul>
               <li><a target="_blank" href="https://m.sinopac.com/MMA8/mobile/official/index.html">行動銀行體驗</a></li>
@@ -87,9 +88,10 @@
           <nav class="footer-nav hidden-min">
             <div class="container">
               <ul>
+                <li><a href="/">回首頁</li>
                 <li><a href="/@@result">星座榮譽榜</a></li>
                 <li><a target="_blank" href="https://www.facebook.com/media/set/?set=a.1289515027730941.1073741835.155069867842135&type=3">FB星座故事篇</a></li>
-                <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide.html">MMA網銀服務</a></li>
+                <li><a target="_blank" href="https://mma.sinopac.com/MMA8/mma/html/guide/guide01.html">MMA網銀服務</a></li>
                 <li><a target="_blank" href="https://m.sinopac.com/MMA8/mobile/official/index.html">行動銀行體驗</a></li>
                 <li><a target="_blank" href="https://youtu.be/0k1hGlwU-Rs">星座影片</a></li>
                 <li><a href="/@@measures">活動辦法</a></li>
@@ -124,8 +126,8 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <meta property="og:title" content="12星座理財榮譽榜" />
-    <meta property="og:image" tal:attributes="content string:${context/absolute_url}/++resource++sinopac.addon/images/anan-index.png"/>
+    <meta property="og:title" content="《永豐銀行》12星座理財榮譽榜" />
+    <meta property="og:image" tal:attributes="content string:${context/absolute_url}/++resource++sinopac.addon/images/shutter_image_335.png"/>
     <meta property="og:description" content="活動期間成功完成任務，就有機會獲得Sony PS4、全家50元商品兌換券、KKBOX30天音樂體驗兌換券等多項大獎。" />
     <meta name="keywords" content="永豐銀行,MMA,星座理財,機智問答,榮譽榜,網路銀行,行動銀行,星座故事"/>
     <meta name="description" content="輕鬆掌握2016星座運勢，完成任務就有機會獲得Sony Ps4" />

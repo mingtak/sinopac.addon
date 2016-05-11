@@ -1,0 +1,7 @@
+<h5 tal:repeat="user view/bingoer">
+ <strong style="color:blue">姓名: </strong><span tal:content="python:user.getProperty('fullname')"/>,
+ <strong style="color:blue">Email: </strong><span tal:content="python:user.getProperty('email')"/>,
+ <strong style="color:blue">FB連結: </strong><a tal:content="python:user.getUserName().split('fb')[1]"
+    tal:attributes="href python:'https://www.facebook.com/%s' % user.getUserName().split('fb')[1]"
+    tal:on-error="nothing" target="_blank" />
+</h5>
