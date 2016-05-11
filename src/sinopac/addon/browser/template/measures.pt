@@ -20,7 +20,9 @@
             <div class="act-block">
               <div class="content fs100p">
                 <div class="st">
-                  <div class="act-title"></div>
+                  <a href="/">                  
+                    <div class="act-title"></div>
+                  </a>
                   <h2 class="hidden-min">活動辦法</h2>
                   <div class="measures">
                     <div class="tinyscrollbar">

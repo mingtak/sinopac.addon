@@ -20,7 +20,9 @@
             <div class="act-block">
               <div class="content">
                 <div class="st">
-                  <div class="act-title"></div>
+                  <a href="/">
+                    <div class="act-title"></div>
+                  </a>
                   <h2 class="l2 hidden-min">榮譽榜積分獎</h2>
                   <h3>第 <span tal:content="view/num">01</span> 題</h3>
                   <div class="qa-block">
