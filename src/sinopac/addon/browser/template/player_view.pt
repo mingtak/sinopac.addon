@@ -31,13 +31,28 @@
 
 <hr/>
 
-<h3>參加問答名單</h3>
+<h3>參加問答名單(目前參加人數:<span tal:content="python:len(context.players)" />)</h3>
+
 <div tal:define="players context/players">
-  <h4 tal:repeat="player players">
-   <strong style="color:blue">姓名: </strong><span tal:content="python:' '.join(player.split()[0:-2])" />,
-   <strong style="color:blue">Email: </strong><span tal:content="python:player.split()[-2]" />,
-   <strong style="color:blue">星座: </strong><span tal:content="python:player.split()[-1]" i18n:translate="" />
-  </h4>
+
+<table>
+  <thead>
+    <tr style="background-color:#de8">
+      <th>姓名</th>
+      <th>Email</th>
+      <th>星座</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr tal:repeat="player players" tal:attributes="style python:'background-color:#bfb' if repeat['player'].odd else ''">
+      <td tal:content="python:' '.join(player.split()[0:-2])" />
+      <td tal:content="python:player.split()[-2]" />
+      <td tal:content="python:player.split()[-1]" i18n:translate="" />
+    </tr>
+  </tbody>
+</table>
+
 </div>
 
 

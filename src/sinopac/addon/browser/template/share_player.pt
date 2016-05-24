@@ -16,19 +16,32 @@
 
 
 <hr/>
-<h3>參加分享名單</h3>
-<ul tal:define="users view/users">
-<li tal:repeat="user users">
-<p>
- <strong style="color:blue">姓名: </strong><span tal:content="python:user.getProperty('fullname')"/>,
- <strong style="color:blue">Email: </strong><span tal:content="python:user.getProperty('email')"/>,
- <strong style="color:blue">FB連結: </strong><a tal:content="python:user.getUserName().split('fb')[1]"
-    tal:attributes="href python:'https://www.facebook.com/%s' % user.getUserName().split('fb')[1]"
-    tal:on-error="nothing" target="_blank" />
-</p>
 
-</li>
-</ul>
+<h3>參加分享名單(目前參加人數:<span tal:content="python:len(view.users)" />)</h3>
+<table tal:define="users view/users">
+
+  <thead>
+    <tr style="background-color:#de8">
+      <th>姓名</th>
+      <th>Email</th>
+      <th>FB連結</th>
+    </tr>
+  </thead>    
+
+  <tbody>
+    <tr tal:repeat="user users" tal:attributes="style python:'background-color:#bfb' if repeat['user'].odd else ''">
+      <td tal:content="python:user.getProperty('fullname')"/>
+      <td tal:content="python:user.getProperty('email')"/>
+      <td>
+        <a tal:content="python:user.getUserName().split('fb')[1]"
+           tal:attributes="href python:'https://www.facebook.com/%s' % user.getUserName().split('fb')[1]"
+           tal:on-error="nothing" target="_blank" />
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
 
 <script type="text/javascript">
 $(document).ready(function(){
