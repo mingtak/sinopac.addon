@@ -73,7 +73,7 @@
 <script type="text/javascript" tal:repeat="ans python:range(4)">
 $(document).ready(function(){
   $(".answer_<tal:ans replace="repeat/ans/number" />").click(function(){
-    $('div.nd').load('/@@check-answer?num=<tal:num replace="view/num" />&ans=<tal:ans replace="repeat/ans/number" />&ra=<tal:right_answer replace="view/answer"/>');
+    $('div.nd').load('/sinopac/@@check-answer?num=<tal:num replace="view/num" />&ans=<tal:ans replace="repeat/ans/number" />&ra=<tal:right_answer replace="view/answer"/>');
 
     <tal:right condition="python:repeat['ans'].number == view.answer">
     $('.answer_<span tal:replace="view/answer" />').attr("class", "correct");

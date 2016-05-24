@@ -46,7 +46,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $("a.go").click(function(){
-    $('div.share-bingo').load('/@@share_bingo')
+    $('div.share-bingo').load('/sinopac/@@share_bingo')
   });
 });
 

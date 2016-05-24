@@ -18,7 +18,7 @@
         <div class="outer_container">
           <div class="container">
             <div class="act-block">
-<form method="post" action="/@@computing" id="myform">
+<form method="post" action="/sinopac/@@computing" id="myform">
               <div class="content fake-bg">
                 <div class="act-title"></div>
                 <h2 class="l2 hidden-min">榮譽榜積分獎</h2>

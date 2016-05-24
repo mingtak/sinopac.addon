@@ -82,7 +82,7 @@ class Computing(BrowserView):
                 notify(ObjectModifiedEvent(players))
                 transaction.commit()
 
-        response.redirect('/@@result?played=%s&scope=%s' % (played, self.scope))
+        response.redirect('/sinopac/@@result?played=%s&scope=%s' % (played, self.scope))
         return
 
 
@@ -122,7 +122,7 @@ class Questions(BrowserView):
                     question = q
                     break
             if question is None:
-                response.redirect('/@@leaving')
+                response.redirect('/sinopac/@@leaving')
                 return
 
         self.qBrain = catalog(UID=question.split(':')[0])

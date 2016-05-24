@@ -60,7 +60,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $("a.go").click(function(){
-    $('div.ps4-bingo').load('/@@ps4-bingo')
+    $('div.ps4-bingo').load('/sinopac/@@ps4-bingo')
   });
 });
 </script>
