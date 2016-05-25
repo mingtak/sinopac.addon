@@ -62,6 +62,11 @@
                         </div>
                       </div>
                     </li>
+<li> <div class="th">驗證：</div>
+<div class="td"><div class="out-box">
+<div class="g-recaptcha" data-sitekey="6Lf-0CATAAAAAO1kAgXeJL5H5VUVLw2EHsJTfpwg"></div></div>
+</div>
+</li>    
                   </ul>
                   <div class="submit-btn">
 <input type="submit" value="完成送出" class="submit">

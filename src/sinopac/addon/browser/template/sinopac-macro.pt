@@ -147,7 +147,7 @@
     <script src="++resource++sinopac.addon/js/respond.min.js" type="text/javascript"></script>
     <![endif]-->
     <script src="++resource++sinopac.addon/js/site-light.js" type="text/javascript"></script>
-
+    <script src='https://www.google.com/recaptcha/api.js?hl=zh-TW'></script>
   </metal:row>
 
 </body>

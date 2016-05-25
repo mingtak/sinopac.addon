@@ -8,6 +8,9 @@ from DateTime import DateTime
 import transaction
 from zope.lifecycleevent import ObjectModifiedEvent
 from zope.event import notify
+from zope.component import getMultiAdapter
+import urllib, urllib2
+import json
 
 
 class Testttt(BrowserView):
@@ -18,6 +21,15 @@ class Testttt(BrowserView):
 class Computing(BrowserView):
     """ Computing
     """
+
+    def post(self, url, data):
+        req = urllib2.Request(url)
+        data = urllib.urlencode(data)
+        #enable cookie
+        opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
+        response = opener.open(req, data)
+        return response.read()
+
 
     def __call__(self):
         context = self.context
@@ -34,8 +46,21 @@ class Computing(BrowserView):
         name = request.get('name')
         email = request.get('email')
 
+        postUrl = 'https://www.google.com/recaptcha/api/siteverify'
+        data = {
+            'secret':portal['resource']['recaptcha'].description,
+            'response':request.form.get('g-recaptcha-response'),
+            'remoteip':request.get('REMOTE_ADDR'),
+        }
+
+        recaptchaResult = json.loads(self.post(postUrl, data))
+
+        if not recaptchaResult.get('success'):
+            response.redirect('/sinopac/@@leaving')
+            return
+
         if not (const and name and email):
-            response.redirect('/')
+            response.redirect('/sinopac')
             return
 
         self.scope = 0
@@ -100,7 +125,7 @@ class Questions(BrowserView):
         catalog = context.portal_catalog
 
         if not (request.get('HTTP_REFERER', '').endswith('questions-start') != request.get('HTTP_REFERER', '').endswith('questions')):
-            response.redirect('/')
+            response.redirect('/sinopac')
             return
 
         if request.get('HTTP_REFERER', '').endswith('questions-start'):
